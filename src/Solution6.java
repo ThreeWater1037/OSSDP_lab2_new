@@ -92,7 +92,7 @@ class Solution6 {
     public List<Integer> peopleIndexes(List<List<String>> favoriteCompanies) {
         // 初始化Set数组
         for (int i = 0; i < 105; ++i) {
-            s[i] = new HashSet<String>();
+            s[i] = new HashSet<String>();// 每个人的收藏清单初始化为空集合
         }
         int n = favoriteCompanies.size(); // 获取收藏清单的数量
         List<Integer> ans = new ArrayList<Integer>(); // 存储结果的列表
@@ -123,6 +123,7 @@ class Solution6 {
 
     // 辅助方法，检查x是否是y的子集
     public boolean check(List<List<String>> favoriteCompanies, int x, int y) {
+        //遍历第x个人的收藏清单中的每一个公司
         for (String com : favoriteCompanies.get(x)) {
             if (!s[y].contains(com)) {
                 return false; // 如果x中的某个公司不在y中，返回false
